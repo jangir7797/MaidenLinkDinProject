@@ -69,8 +69,8 @@ def generate_post_with_gemini(article_data, tone, audience):
 
 # Load environment variables
 load_dotenv()
-api_key = os.getenv("GOOGLE_API_KEY")
-model_name = os.getenv("GEMINI_MODEL_NAME")
+api_key = os.getenv("LLM_API_KEY")
+model_name = os.getenv("LLM_MODEL")
 
 # Configure Google AI
 if not api_key:
@@ -150,4 +150,5 @@ else:
                     if st.button("Start Over with a New URL"):
                         st.rerun()
             else:
+
                 st.warning("Please provide both a topic and context.")
